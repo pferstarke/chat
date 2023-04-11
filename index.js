@@ -19,6 +19,7 @@ app.use(cors({origin: '*'}));
 app.use('/users', userRoute);
 app.use('/chats', chatRoute);
 app.use('/messages', messageRoute);
+app.use(express.urlencoded({extended: true}));
 
 // CRUD
 app.get('/', (request, response) => {
