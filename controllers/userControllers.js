@@ -7,7 +7,7 @@ const auth = require('../auth');
 
 module.exports.registerUser = async (req, res) => {
 	
-try{
+
 	const {name, email, password} = req.body;
 
 	let user = await User.findOne({email});
@@ -35,16 +35,13 @@ try{
 	const token = auth.createAccessToken(user);
 
 	res.status(200).json({_id: user._id, name, email, token})
-	}catch(error){
-		console.log(error);
-		res.status(500).json(error);
-}}
+	}
 
 
 	module.exports.loginUser = async (req, res) => {
 		const { email, password } = req.body;
 
-		try{
+		
 			let user = await User.findOne({email});
 
 			if(!user){
@@ -62,11 +59,7 @@ try{
 				res.status(200).json({_id: user._id, name: user.name, email, token})
 			}
 
-		}catch(error){
-			console.log(error);
-			res.status(500).json(error);
 		}
-	}
 
 /*module.exports.getProfile = (req, res) => {
 
@@ -84,14 +77,10 @@ try{
 module.exports.findUser = async (req, res) =>{
 	const userId = req.params.userId;
 
-	try{
 		const user = await User.findById(userId);
 		res.status(200).json(user);
-	}catch(error){
-		console.log(error);
-		res.status(500).json(error);
-	}
 }
+
 
 module.exports.getUsers = (req, res) =>{
 	return User.find().then(result => {
