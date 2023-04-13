@@ -1,12 +1,12 @@
 # chat-backend
 
-<h2>after cloning, please try the following commands in your terminal:</h2><br />
+after cloning, please try the following commands in your terminal: <br/>
 
-go to cloned directory using command:
-<h1>cd chat-backend</h1>
+go to cloned directory using command:<br />
+<strong>cd chat-backend</strong>
 
-install/update packages:
-<h1>npm install</h1><br />
+install/update packages:<br />
+<strong>npm install</strong>
 
-run the server:
-<h1>nodemon index.js<h1>
+run the server:<br />
+<strong>nodemon index.js<strong>
